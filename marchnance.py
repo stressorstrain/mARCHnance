@@ -10,6 +10,10 @@ class GUI:
         self.log = "logs"
         self.m = Methods
 
+        # Pictures
+        self.logo = tk.PhotoImage(file="arch_s.gif")
+
+
         # Frames
         self.frame = tk.Frame(
                                                 master,  bg="black", bd=10,
@@ -17,6 +21,9 @@ class GUI:
                                                 )
         self.bt_frame = tk.Frame(self.frame, bg="black")
         self.txt_frame = tk.Frame(self.frame, bg="black")
+
+        # Labels
+        self.label = tk.Label(self.bt_frame, bg="black", image=self.logo)
 
         # Text
         self.txt1 = tk.Text(self.txt_frame, height=25, width=105)
@@ -54,8 +61,9 @@ class GUI:
 
         # Placing
         self.frame.grid()
-        self.bt_frame.grid(row=0, column=0, pady=10, sticky='N')
+        self.bt_frame.grid(row=0, column=0, pady=(10, 0), sticky='N')
         self.txt_frame.grid(row=0, column=1)
+        self.label.grid(row=5, column=0, sticky='N', pady=1)
         self.txt1.grid(row=0, column=1, padx=(10, 10), pady=(10, 10), sticky="E")
         self.bt1.grid(row=0, column=0)
         self.bt2.grid(row=1, column=0, pady=10)
